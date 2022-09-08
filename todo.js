@@ -79,19 +79,23 @@ function renderData(array){
             deleteButton.removeAttribute("disabled")
         });
         //BUTTONS
+        let favourtieList = [];
         let img = document.createElement("img");
         img.setAttribute("src","favorite.png");
         img.setAttribute("class","favicon")
         img.addEventListener("click",function(event){
             console.log("hello i m fav")
             console.log(event.target.previousElementSibling.previousElementSibling.textContent )
-            let li = document.createElement("li");
+            let li = document.createElement
+            ("li");
         li.setAttribute("class","list-group-item d-flex");
-        li.innerHTML=event.target.previousElementSibling.previousElementSibling.textContent
+        li.innerHTML=event.target.previousElementSibling.previousElementSibling.textContent;
+        favourtieList.push(event.target.previousElementSibling.previousElementSibling.textContent);
+        localStorage.setItem("todoFavourite",JSON.stringify(favourtieList));
         favorite.append(li)
         let tittle=document.querySelector(".tittle");
         tittle.classList.remove("tittle");
-            tittle.classList.add("ABC")
+        
 
          });
 
